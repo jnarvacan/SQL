@@ -1,0 +1,52 @@
+#In this SQL code, I'm creating a database table with some small set of "famous people" and what they do. 
+
+CREATE TABLE Famous_People (id INTEGER PRIMARY KEY,
+    first_name TEXT,
+    last_name TEXT,
+    birthdate TEXT,
+    occupation integer);
+
+INSERT INTO Famous_People (first_name, last_Name, birthdate, occupation)
+    VALUES ("Leonardo", "Dicaprio", "11-11-1974", 1);
+INSERT INTO Famous_People (first_name, last_Name, birthdate, occupation)
+    VALUES ("Justin", "Bieber", "03-01-1994", 2);
+INSERT INTO Famous_People (first_name, last_Name, birthdate, occupation)
+    VALUES ("Lionel", "Messi", "06-24-1987", 3);
+INSERT INTO Famous_People (first_name, last_Name, birthdate, occupation)
+    VALUES ("Bella", "Hadid", "10-09-1996", 4);
+INSERT INTO Famous_People (first_name, last_Name, birthdate, occupation)
+    VALUES ("Drew", "Barrymore", "02-22-1975", 1);
+INSERT INTO Famous_People (first_name, last_Name, birthdate, occupation)
+    VALUES ("Avril", "Lavigne", "09-27-1984", 2);
+INSERT INTO Famous_People (first_name, last_Name, birthdate, occupation)
+    VALUES ("Lucky Blue", "Smith", "06-04-1998", 4);
+INSERT INTO Famous_People (first_name, last_Name, birthdate, occupation)
+    VALUES ("Michael", "Jackson", "08-29-1958", 2);
+INSERT INTO Famous_People (first_name, last_Name, birthdate, occupation)
+    VALUES ("Zac", "Efron", "10-18-1987", 1);
+INSERT INTO Famous_People (first_name, last_Name, birthdate, occupation)
+    VALUES ("Manny", "Pacquiao", "12-17-1978", 3);
+INSERT INTO Famous_People (first_name, last_Name, birthdate, occupation)
+    VALUES ("Serena", "Williams", "09-26-1981", 3);
+INSERT INTO Famous_People (first_name, last_Name, birthdate, occupation)
+    VALUES ("Rachel", "McAdams", "11-17-1978", 1);
+INSERT INTO Famous_People (first_name, last_Name, birthdate, occupation)
+    VALUES ("Cara", "Delevingne", "08-12-1992", 4);
+INSERT INTO Famous_People (first_name, last_Name, birthdate, occupation)
+    VALUES ("Kurt", "Cobain", "02-20-1967", 2);
+INSERT INTO Famous_People (first_name, last_Name, birthdate, occupation)
+    VALUES ("Stevie", "Wonder", "05-13-1950", 2);
+    
+CREATE TABLE Profession (id INTEGER PRIMARY KEY,
+title TEXT);
+
+INSERT INTO Profession VALUES (1, "Actor");
+INSERT INTO Profession VALUES (2, "Musician");
+INSERT INTO Profession VALUES (3, "Athlete");
+INSERT INTO Profession VALUES (4, "Model");
+
+#Joining to create readable lists.
+SELECT f.first_name, f.last_name, p.title
+    FROM Famous_people f
+	  JOIN Profession p
+	  ON f.id=p.title;
